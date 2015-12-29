@@ -1,0 +1,21 @@
+{
+  "name": "slack-lambda-google",
+  "version": "0.1.0",
+  "description": "A serverless Slack Slash Commands to integrate Google Knowledge Graph API using AWS Lambda and AWS API Gateway",
+  "main": "lambda.js",
+  "scripts": {
+    "build": "./scripts/build.sh",
+    "create": "./scripts/create.sh",
+    "deploy": "./scripts/deploy.sh"
+  },
+  "author": "Amo Wu <amo260@gmail.com>",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "lodash": "^3.10.1",
+    "request-promise": "^0.4.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/amowu/slack-lambda-google.git"
+  }
+}
