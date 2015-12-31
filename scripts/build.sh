@@ -5,9 +5,19 @@ if [ ! -f ./config.json ]; then
   exit 1
 fi
 
+echo "install..."
+
 npm install
+
+echo "clean..."
 
 rm -rf ./dist
 mkdir -p dist
 
-zip -r -q dist/lambda.zip . -i "lib/*" "node_modules/*" "config.json" "messages.json" "lambda.js" "package.json" -x "*/.DS_Store"
+echo "bundle..."
+
+./node_modules/.bin/webpack
+
+echo "zip..."
+
+zip -r dist/index.zip . -i "dist/index.js"

@@ -10,4 +10,4 @@ echo "deploy..."
 
 aws lambda update-function-code \
   --function-name "$1" \
-  --zip-file fileb://$(pwd)/dist/lambda.zip
+  --zip-file fileb://$(pwd)/dist/index.zip

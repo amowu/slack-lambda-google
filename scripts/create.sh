@@ -13,7 +13,7 @@ aws lambda create-function \
   --function-name "$1" \
   --runtime nodejs \
   --role "$2" \
-  --handler lambda.handler \
+  --handler dist/index.handler \
   --timeout 6 \
   --memory-size 512 \
-  --zip-file fileb://$(pwd)/dist/lambda.zip
+  --zip-file fileb://$(pwd)/dist/index.zip
