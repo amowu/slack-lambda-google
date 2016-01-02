@@ -4,9 +4,8 @@
   "description": "A serverless Slack Slash Commands to integrate Google Knowledge Graph API using AWS Lambda and AWS API Gateway",
   "main": "index.js",
   "scripts": {
-    "build": "gulp build",
-    "create": "./scripts/create.sh",
-    "deploy": "./scripts/deploy.sh"
+    "start": "gulp",
+    "build": "gulp build"
   },
   "author": "Amo Wu <amo260@gmail.com>",
   "license": "Apache-2.0",
@@ -26,6 +25,7 @@
     "bluebird": "^3.1.1",
     "del": "^2.2.0",
     "gulp": "^3.9.0",
+    "gulp-awslambda": "^0.3.0",
     "gulp-util": "^3.0.7",
     "gulp-zip": "^3.0.2",
     "json-loader": "^0.5.4",

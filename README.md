@@ -13,26 +13,17 @@ This project was built with Ryan Ray's repo [slack-lambda-weather](https://githu
 ### Prerequisites
 
 * Install [AWS CLI](https://aws.amazon.com/cli/)
-* Execution Role ARN for your AWS Lambda
-* Create a `config.json` based on `config.sample.json`. This file is gitignored by default because this is where you would put any API key's and other secret info that your lambda may need.
+* Create a `config.json` based on `config.sample.json`. This file is gitignored by default because this is where you would put any API key's, AWS settings, and other secret info that your lambda may need.
 * [Google Knowledge Graph Search API](https://developers.google.com/knowledge-graph/) API key, and paste it to `config.json`.
 
 ### AWS Lambda
 
 > Lambda is based on EC2 and allows you to deploy and execute your code (Node.js, Java, Python) without having to provision servers.
 
-First build and create your Lambda function on AWS:
+Deploy and update your Lambda code:
 
 ```sh
-npm run create LAMBDA_FUNCTION_NAME EXECUTION_ROLE_ARN
-```
-
-> Before you can create your Lambda you need to create an execution role. If you did any of the Lambda hello world tutorials in the AWS console you should already have a role created. Either way you need to goto the [IAM Management Console - Roles](https://console.aws.amazon.com/iam/home#roles). Get the ARN of `lambda_basic_execution` or create a new role based on `role.example.json` and get the ARN from that. The full ARN looks something like `arn:aws:iam::YOUR_ACCOUNT_ID:role/lambda_basic_execution`.
-
-Build and deploy to update your Lambda code:
-
-```sh
-npm run deploy LAMBDA_FUNCTION_NAME
+npm start
 ```
 
 ### AWS API Gateway
