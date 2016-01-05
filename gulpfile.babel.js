@@ -34,7 +34,6 @@ gulp.task('default', ['build'], () =>
       Handler: config.AWS.LAMBDA_HANDLER,
       MemorySize: config.AWS.LAMBDA_MEMORY_SIZE,
       Role: `arn:aws:iam::${config.AWS.ACCOUNT_ID}:role/lambda_basic_execution`,
-      Runtime: 'nodejs',
       Timeout: config.AWS.LAMBDA_TIMEOUT
     },{
       region: config.AWS.LAMBDA_REGION
