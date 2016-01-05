@@ -1,7 +1,9 @@
 {
-  "UNAUTHORIZED_TOKEN": "Unauthorized Request. Check Your Slash Commands Token.",
   "ERROR_FALLBACK": "告訴你一件很恐怖的事⋯⋯",
   "ERROR_TEXT": "◢▆▅▄▃崩╰(〒皿〒)╯潰▃▄▅▇◣",
   "RESULT_NOT_FOUND_FALLBACK": "告訴你一件很恐怖的事⋯⋯",
-  "RESULT_NOT_FOUND_TEXT": "幹！我找不到⋯ಥ_ಥ"
+  "RESULT_NOT_FOUND_TEXT": "幹！我找不到⋯ಥ_ಥ",
+  "SNS_MESSAGE_NOT_FOUND": "SNS Message Not Found.",
+  "SLASH_COMMAND_NOT_FOUND": "Slash Command Not Found.",
+  "UNAUTHORIZED_TOKEN": "Unauthorized Request. Check Your Slash Commands Token."
 }
