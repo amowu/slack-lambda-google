@@ -10,8 +10,8 @@ import config from './config.json'
 
 gulp.task('clean', () => del('dist'))
 
-gulp.task('webpack', (done, stats) => {
-  webpack(require('./webpack.config.js'), (error) => {
+gulp.task('webpack', done => {
+  webpack(require('./webpack.config.js'), (error, stats) => {
     if(error) throw new gutil.PluginError('webpack', error)
     gutil.log(stats.toString({
       chunks: false
