@@ -10,15 +10,21 @@ A serverless [Slack Slash Commands](https://api.slack.com/slash-commands) to int
 
 This project was built with Ryan Ray's repo [slack-lambda-weather](https://github.com/ryanray/slack-lambda-weather) and his [post](http://www.ryanray.me/serverless-slack-integrations).
 
+![sequence diagram](https://cloud.githubusercontent.com/assets/559351/12264716/973a9868-b973-11e5-974b-a0107c151453.png)
+
 ### Prerequisites
 
 * Install [AWS CLI](https://aws.amazon.com/cli/)
 * Create a `config.json` based on `config.sample.json`. This file is gitignored by default because this is where you would put any API key's, AWS settings, and other secret info that your lambda may need.
 * [Google Knowledge Graph Search API](https://developers.google.com/knowledge-graph/) API key, and paste it to `config.json`.
 
+```sh
+npm install
+```
+
 ### AWS Lambda
 
-> Lambda is based on EC2 and allows you to deploy and execute your code (Node.js, Java, Python) without having to provision servers.
+Lambda is based on EC2 and allows you to deploy and execute your code (Node.js, Java, Python) without having to provision servers.
 
 Deploy and update your Lambda code:
 
@@ -26,14 +32,27 @@ Deploy and update your Lambda code:
 npm start
 ```
 
+### AWS SNS
+
+> New: v0.4.0
+
+1. Goto [AWS SNS](https://aws.amazon.com/sns/)
+2. Slect Topics, click Create new topic
+3. Input your Topic name, and create
+4. Create Subscription
+5. Select Protocol to AWS Lambda
+6. Select Endpoint to your Lambda function
+7. Click Create Subscription to complete
+8. Goto Lambda to create a function to send Slack event for SNS, to copy and modify `sns.sample.js` code
+
 ### AWS API Gateway
 
-> Lambda responds to events, which can come from a variety of sources. By default Lambda isn't accessable from a URL, but API Gateway allows you to map a URL and an HTTP method to trigger your Lambda code. You can setup GET, POST, PUT, etc... and map the parameters/body into a JSON payload that Lambda understands.
+Lambda responds to events, which can come from a variety of sources. By default Lambda isn't accessable from a URL, but API Gateway allows you to map a URL and an HTTP method to trigger your Lambda code. You can setup GET, POST, PUT, etc... and map the parameters/body into a JSON payload that Lambda understands.
 
 1. Goto [AWS API Gateway](https://aws.amazon.com/api-gateway/) and Create new API - name it whatever you want - we'll do LambdaTest for now
 2. Create a new resource, name it whatever
 3. Create a POST method under your resource
-4. Select Integration type with Lambda Function, and select your Lambda region, and enter your Lambda function name
+4. Select Integration type with Lambda Function, and select your Lambda region, and enter your Lambda function name from step SNS
 5. Save and give API Gateway permission to invoke your Lambda function
 6. Click on Integration Request > Mapping Templates
 7. Add mapping Template for `application/x-www-form-urlencoded` and click checkmark
