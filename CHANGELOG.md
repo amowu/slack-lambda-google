@@ -1,3 +1,13 @@
+<a name="0.4.1"></a>
+## [0.4.1](https://github.com/amowu/slack-lambda-google/compare/0.4.0...v0.4.1) (2016-01-12)
+
+
+### Bug Fixes
+
+* **gulp:** params error ([801c07e](https://github.com/amowu/slack-lambda-google/commit/801c07e))
+
+
+
 <a name="0.4.0"></a>
 # [0.4.0](https://github.com/amowu/slack-lambda-google/compare/0.1.0...v0.4.0) (2016-01-12)
 
